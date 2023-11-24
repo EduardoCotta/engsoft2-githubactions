@@ -39,7 +39,7 @@ class TestPokedex(unittest.TestCase):
     
     def test_get_pokemon_evolutions_WHEN_pokemon_has_evolutions_RETURNS_evolutions(self):
         pokemon = "Bulbasaur";
-        expected = ["Ivysaur, Venusaur"]
+        expected = ["Ivysaur",  "Venusaur"]
         actual = self.pokedex.get_pokemon_evolutions(pokemon)
         self.assertEqual(actual, expected)
     
