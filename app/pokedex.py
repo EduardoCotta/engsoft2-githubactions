@@ -57,3 +57,10 @@ class Pokedex:
                 return bool(pokemon.evolutions)
 
         return f"Pokemon '{pokemon_name}' not found in the Pokedex."
+    
+    def get_pokemon_evolutions(self, pokemon_name):
+        for pokemon in self.pokemons:
+            if pokemon.name == pokemon_name:
+                return pokemon.evolutions
+
+        return f"Pokemon '{pokemon_name}' not found in the Pokedex."

@@ -36,3 +36,21 @@ class TestPokedex(unittest.TestCase):
         expected = False
         actual = self.pokedex.has_evolutions(pokemon)
         self.assertEqual(actual, expected)
+    
+    def test_get_pokemon_evolutions_WHEN_pokemon_has_evolutions_RETURNS_evolutions(self):
+        pokemon = "Bulbasaur";
+        expected = ["Ivysaur, Venusaur"]
+        actual = self.pokedex.get_pokemon_evolutions(pokemon)
+        self.assertEqual(actual, expected)
+    
+    def test_get_pokemon_evolutions_WHEN_pokemon_has_no_evolutions_RETURNS_error_message(self):
+        pokemon = "Ditto";
+        expected = []
+        actual = self.pokedex.get_pokemon_evolutions(pokemon)
+        self.assertEqual(actual, expected)
+    
+    def test_get_pokemon_evolutions_WHEN_pokemon_does_not_exist_RETURNS_error_message(self):
+        pokemon = "NonExistentPokemon";
+        expected = "Pokemon 'NonExistentPokemon' not found in the Pokedex."
+        actual = self.pokedex.get_pokemon_evolutions(pokemon)
+        self.assertEqual(actual, expected)
